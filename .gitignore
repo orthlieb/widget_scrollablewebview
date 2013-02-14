@@ -1,0 +1,12 @@
+.DS_Store
+build.log
+build
+npm-debug.log
+tmp*.class
+*.pyc
+*.pyo
+Resources
+.project
+modules
+.settings/com.aptana.editor.common.prefs
+plugins

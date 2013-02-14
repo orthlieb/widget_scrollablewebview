@@ -1,0 +1,7 @@
+<Alloy>
+    <View id="main">
+        <ScrollableView id="scrollableView"/>
+        <Button platform="android" id="prevButton"/>
+        <Button platform="android" id="nextButton"/>
+    </View>
+</Alloy>

@@ -1,0 +1,22 @@
+"#scrollableView": {
+    left : 0, top: 0, 
+    right: 0, bottom: 0,
+    currentPage : 0,
+    pagingControlColor : 'blue',
+    backgroundColor: "white",
+    currentPage : 0
+},
+
+"#prevButton[platform=android]": {
+    left: 5, bottom: 0, width: 30, height: 30,
+    backgroundImage: "images/LeftArrow.png",
+    backgroundDisabledImage: "images/LeftArrowDisabled.png",
+    enabled: false
+},
+
+"#nextButton[platform=android]": {
+    right: 5, bottom: 0, width: 30, height: 30,
+    backgroundImage: 'images/RightArrow.png',
+    backgroundDisabledImage: 'images/RightArrowDisabled.png',
+    enabled: true
+}

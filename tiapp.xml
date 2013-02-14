@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <property name="acs-oauth-secret-production" type="string">KAlcMWTwOmbUMlMs7gi59eRVcXEpV2H6</property>
+    <property name="acs-oauth-key-production" type="string">fbjM71XlSO3phzZ1r3hm2tTs4zGAXqr9</property>
+    <property name="acs-api-key-production" type="string">RFlSVKzaFh8eIOzTIiyNk3timgh9dqdP</property>
+    <property name="acs-oauth-secret-development" type="string">E4KmI2DfftMHOUf5iinzK6hS0ZVQ810h</property>
+    <property name="acs-oauth-key-development" type="string">AIOz1x1pLJUQk2mVJ381nVPm6i1blo2Z</property>
+    <property name="acs-api-key-development" type="string">VfZc5hh2cEONLnBzDqGdirvxr5kV5BF7</property>
+    <id>com.orthlieb.scrollablewebview</id>
+    <name>widget_scrollablewebview</name>
+    <version>1.0</version>
+    <publisher>corthlieb</publisher>
+    <url>http://</url>
+    <description>not specified</description>
+    <copyright>2013 by corthlieb</copyright>
+    <icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>cf0e6cdc-ec7d-4584-b29b-3a0523f6194c</guid>
+    <property name="ti.ui.defaultunit" type="string">system</property>
+    <iphone>
+        <orientations device="iphone">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+        <orientations device="ipad">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+    </iphone>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="android" version="1.0">ti.physicalSizeCategory</module>
+    </modules>
+    <deployment-targets>
+        <target device="blackberry">false</target>
+        <target device="android">true</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">false</target>
+    </deployment-targets>
+    <sdk-version>3.0.0.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+</ti:app>
