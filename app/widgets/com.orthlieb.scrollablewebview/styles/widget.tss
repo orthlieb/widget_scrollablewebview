@@ -2,21 +2,62 @@
     left : 0, top: 0, 
     right: 0, bottom: 0,
     currentPage : 0,
-    pagingControlColor : 'blue',
-    backgroundColor: "white",
-    currentPage : 0
+    pagingControlColor : 'gray',
+    backgroundColor: "white"
 },
 
-"#prevButton[platform=android]": {
-    left: 5, bottom: 0, width: 30, height: 30,
-    backgroundImage: "images/LeftArrow.png",
-    backgroundDisabledImage: "images/LeftArrowDisabled.png",
+
+// Handheld
+"#toolbar[formFactor=handheld]": {
+    left: 0, right: 0, bottom: 0,
+    height: "30 dp",
+    backgroundColor: "transparent"
+},
+
+
+"#prevButton[formFactor=handheld]": {
+    left: 0, bottom: 0, width: "30 dp", height: "30 dp",
+    backgroundImage: WPATH("images/arrow_left.png"),
+    backgroundDisabledImage: WPATH("images/arrow_left_disabled.png"),
     enabled: false
 },
 
-"#nextButton[platform=android]": {
-    right: 5, bottom: 0, width: 30, height: 30,
-    backgroundImage: 'images/RightArrow.png',
-    backgroundDisabledImage: 'images/RightArrowDisabled.png',
-    enabled: true
+"#label[formFactor=handheld]": {
+    font: { fontSize: "12 dp" },
+    center: { x: "50%", y: "50%" },
+    color: "#888888"
+},
+
+"#nextButton[formFactor=handheld]": {
+    right: 0, bottom: 0, width: "30 dp", height: "30 dp",
+    backgroundImage: WPATH("images/arrow_right.png"),
+    backgroundDisabledImage: WPATH("images/arrow_right_disabled.png"),
+    enabled: false
+}, 
+
+// Tablet
+"#toolbar[formFactor=tablet]": {
+    left: 0, right: 0, bottom: 0,
+    height: "60 dp",
+    backgroundColor: "transparent"
+},
+
+"#prevButton[formFactor=tablet]": {
+    left: 0, bottom: 0, width: "60 dp", height: "60 dp",
+    backgroundImage: WPATH("images/arrow_left.png"),
+    backgroundDisabledImage: WPATH("images/arrow_left_disabled.png"),
+    enabled: false
+},
+
+"#label[formFactor=tablet]": {
+    font: { fontSize: "24 dp" },
+    center: { x: "50%", y: "50%" },
+    color: "#888888"
+}
+
+"#nextButton[formFactor=tablet]": {
+    right: 0, bottom: 0, width: "60 dp", height: "60 dp",
+    backgroundImage: WPATH("images/arrow_right.png"),
+    backgroundDisabledImage: WPATH("images/arrow_right_disabled.png"),
+    enabled: false
 }

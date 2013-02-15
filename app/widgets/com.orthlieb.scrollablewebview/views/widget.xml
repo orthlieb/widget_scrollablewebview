@@ -1,7 +1,10 @@
 <Alloy>
     <View id="main">
-        <ScrollableView id="scrollableView"/>
-        <Button platform="android" id="prevButton"/>
-        <Button platform="android" id="nextButton"/>
+        <ScrollableView id="scrollableView" onScroll="ScrollableViewScroll"/>
+        <View id="toolbar">
+            <Button id="prevButton" onClick="PrevButtonClick"/>
+            <Label id="label"/>
+            <Button id="nextButton" onClick="NextButtonClick"/>
+        </View>
     </View>
 </Alloy>
