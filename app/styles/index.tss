@@ -3,9 +3,8 @@
 },
 "#swv": {
     top: 0, left: 0, right: 0, bottom: 0,
-    pagingControlStyle: "native",
+    pagingControlStyle: "toolbar",
     showPagingControl: "auto",
-    urlArray: [ "http://www.cnn.com", "http://www.google.com", "http://en.wikipedia.org/wiki/Main_Page" ],
     webView: {
         scalesPageToFit: false,
         enableZoomControls: false

@@ -155,11 +155,21 @@ Note that specifying these properties is *optional*. Reasonable defaults are sup
 # [Accessible Properties and Methods](id:propsandmethods)
 | Name | Type | Description | 
 | ---- | ---- | ----------- |
-| currentPage | *integer* | Index of the active page. |
+| currentPage | *integer* | Index of the active page. Default is 0. |
 | pagingControlStyle | *string* | Should be one of "native" or "toolbar". When "native" it displays a paging control on iOS and a toolbar on Android. When "toolbar" it uses the toolbar for both platforms for a more uniform look. Default is "native". |
 | showPagingControl | *string* | Should be one of "on", "off", or "auto". When "on" the paging control is always displayed. When "off" the paging control is never displayed. When "auto" the paging control is displayed when there is more than one URL in the *urlArray*. Default is "auto". | 
 | urlArray | *array* | Array of strings. If the string starts with "http" then the webview accesses a remote URL, otherwise, the widget looks for a local file in the assets/HTML folder. |
 
+Typically, you'll want to style the *pagingControlStyle* and *showPagingControl* in your tss file, as shown above, and the currentPage and urlArray in your controller.
+
+```
+$.swv.urlArray = [ 
+	"http://www.cnn.com", 
+	"http://www.google.com", 
+	"http://en.wikipedia.org/wiki/Main_Page" 
+];
+$.swv.currentPage = 1;
+```
 
 ## Future Work
 
