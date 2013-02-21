@@ -29,11 +29,11 @@ On iPhone and iPad, a native Paging Control is used to show how many pages are i
 *  Copy the widget_scrollablewebview/widgets/com.orthlieb.scrollablewebview folder into your app/widgets directory. 
 
 ## Create a ScrollableWebView in the View
-You can add a ScrollableWebView to a view by *requiring* the NavigationGroup widget. 
+You can add a ScrollableWebView to a view by *requiring* the ScrollableWebView widget. 
 
 	<Widget id="swv" src="com.orthlieb.scrollablewebview"/>
 
-Assign it an ID that you can use in your controller. E.g. `id="swv"` You can now access the NavigationGroup via `$.swv` in your controller. 
+Assign it an ID that you can use in your controller. E.g. `id="swv"` You can now access the ScrollableWebView via `$.swv` in your controller. 
 
 ## Styling the Widget
 You can style the widget through the parent .tss file including positional information, background color, etc. This includes any properties that are valid for a [TiUIView](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.View) object. To style sub-components of the widget, including the [scrollableView](#scrollableView), [webView](#webView), [prevButton](#buttons), [nextButton](#buttons), [label](#label), and [toolbar](#toolbar), you will need to create a named sub-object with those styles within the widget style. 
