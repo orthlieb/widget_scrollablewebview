@@ -5,8 +5,8 @@ var subviews = [ "scrollableView", "toolbar", "prevButton", "nextButton", "label
 var dimensions =  [ "left", "top", "right", "bottom", "center", "width", "height" ];
 
 // Style the subviews.
-_.extend($.main, _.chain(args).omit(properties).omit(subviews));
-_.extend($.scrollableView, _.chain(args.scrollableView).omit([ "showPagingControl", "currentPage", "views" ]).omit(dimensions));
+_.extend($.main, _.chain(args).omit(properties).omit(subviews).value());
+_.extend($.scrollableView, _.chain(args.scrollableView).omit([ "showPagingControl", "currentPage", "views" ]).omit(dimensions).value());
 _.extend($.prevButton, args.prevButton);
 _.extend($.nextButton, args.nextButton);
 _.extend($.label, args.label);
@@ -105,18 +105,20 @@ Object.defineProperty($, "urlArray", {
     },
     set: function(urlArray) { 
         $._urlArray = urlArray; 
-
-        var aViews = [];
-        var wv = _.chain(args.webView).omit([ "url", "html" ]).omit(dimensions);
-      
-        for (var j = 0; j < urlArray.length; j++) {
-            // If just a name then get a local file, else get a remote file.
-            var url = urlArray[j].match(/^http/) ? urlArray[j] : '/HTML/' + urlArray[j] + '.html'
-            Ti.API.info("Accessing URL: " + url);
-            wv.url = url;
-            aViews[j] = Ti.UI.createWebView(wv);
+    
+        if (urlArray.length > 0) {
+            var aViews = [];
+            var wv = _.chain(args.webView).omit([ "url", "html" ]).omit(dimensions).value();
+          
+            for (var j = 0; j < urlArray.length; j++) {
+                // If just a name then get a local file, else get a remote file.
+                var url = urlArray[j].match(/^http/) ? urlArray[j] : '/HTML/' + urlArray[j] + '.html'
+                Ti.API.info("Accessing URL: " + url);
+                wv.url = url;
+                aViews[j] = Ti.UI.createWebView(wv);
+            }
+            $.scrollableView.views = aViews; 
         }
-        $.scrollableView.views = aViews; 
         UpdateToolbar();   
     }
 });
