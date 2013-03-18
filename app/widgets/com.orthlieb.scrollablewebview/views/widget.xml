@@ -1,6 +1,6 @@
 <Alloy>
     <View id="main">
-        <ScrollableView id="scrollableView" onScroll="ScrollableViewScroll"/>
+        <ScrollableView id="scrollableView" onScrollend="ScrollableViewScrollEnd"/>
         <View id="toolbar">
             <Button id="prevButton" onClick="PrevButtonClick"/>
             <Label id="label"/>

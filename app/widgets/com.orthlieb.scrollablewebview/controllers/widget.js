@@ -21,7 +21,7 @@ function PrevButtonClick(e) {
     $.currentPage--;
 }
 
-function ScrollableViewScroll(e) {
+function ScrollableViewScrollEnd(e) {
     $.currentPage = e.currentPage;
 }
 
@@ -29,7 +29,11 @@ function UpdateLabel(page) {
     // Enable/disable the prev next buttons and update the label.
     $.nextButton.enabled = (page < ($.urlArray.length - 1));
     $.prevButton.enabled = (page != 0);
-    $.label.text = "Page " + (page + 1) + " of " + $.urlArray.length;    
+    var pageControlString = "";
+    for ( i = 0; i < $.urlArray.length; i++) {
+        pageControlString += ((i!= page) ? '\u25cb' : '\u25c9');
+    }
+    $.label.text = pageControlString;    
 }
 
 // Hide show the toolbar and paging control as needed
@@ -59,6 +63,7 @@ function UpdateToolbar() {
 }
 
 // Property: showPagingControl   
+$._showPagingControl = "auto";
 Object.defineProperty($, "showPagingControl", {
     get: function() { 
         return $._showPagingControl; 
@@ -72,6 +77,7 @@ Object.defineProperty($, "showPagingControl", {
 });
 
 // Property: pagingControlStyle   
+$._pagingControlStyle = "native";
 Object.defineProperty($, "pagingControlStyle", {
     get: function() { 
         return $._pagingControlStyle; 
@@ -85,6 +91,7 @@ Object.defineProperty($, "pagingControlStyle", {
 });
 
 // Property: currentPage   
+$._currentPage = 0;
 Object.defineProperty($, "currentPage", {
     get: function() { 
         return $._currentPage; 
@@ -105,22 +112,22 @@ Object.defineProperty($, "urlArray", {
     },
     set: function(urlArray) { 
         $._urlArray = urlArray; 
-    
-        if (urlArray.length > 0) {
-            var aViews = [];
-            var wv = _.chain(args.webView).omit([ "url", "html" ]).omit(dimensions).value();
-          
-            for (var j = 0; j < urlArray.length; j++) {
-                // If just a name then get a local file, else get a remote file.
-                var url = urlArray[j].match(/^http/) ? urlArray[j] : '/HTML/' + urlArray[j] + '.html'
-                Ti.API.info("Accessing URL: " + url);
-                wv.url = url;
-                aViews[j] = Ti.UI.createWebView(wv);
-            }
-            $.scrollableView.views = aViews; 
+
+        var aViews = [];
+        var wv = _.chain(args.webView).omit([ "url", "html" ]).omit(dimensions).value();
+      
+        for (var j = 0; j < urlArray.length; j++) {
+            // If just a name then get a local file, else get a remote file.
+            var url = urlArray[j].match(/^http/) ? urlArray[j] : '/HTML/' + urlArray[j] + '.html'
+            Ti.API.info("Accessing URL: " + url);
+            wv.url = url;
+            aViews[j] = Ti.UI.createWebView(wv);
+            aViews[j].addEventListener('load', function (e) { $.trigger('load', e); });
         }
+        $.scrollableView.views = aViews; 
         UpdateToolbar();   
     }
 });
 
-_.extend($, _.pick(args, properties));
+var x = _.pick(args, properties);
+_.extend($, x);

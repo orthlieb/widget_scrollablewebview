@@ -152,7 +152,7 @@ For example, to specify a background image for the toolbar, you could do the fol
 
 Note that specifying these properties is *optional*. Reasonable defaults are supplied.
 
-# [Accessible Properties and Methods](id:propsandmethods)
+## [Accessible Properties and Methods](id:propsandmethods)
 | Name | Type | Description | 
 | ---- | ---- | ----------- |
 | currentPage | *integer* | Index of the active page. Default is 0. |
@@ -171,7 +171,12 @@ $.swv.urlArray = [
 $.swv.currentPage = 1;
 ```
 
-## Future Work
+## [Events](id:events)
+### load
+Fired once for each web view when the web view content has loaded. See the *TiUIWebView* [load](http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.WebView-event-load) event for more details.
+
+
+# Future Work
 
 * Support for other platforms like Mobile Web and Blackberry.
 * Add relevant events like scrolling.
