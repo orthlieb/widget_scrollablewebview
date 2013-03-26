@@ -31,7 +31,7 @@ function UpdateLabel(page) {
     $.prevButton.enabled = (page != 0);
     var pageControlString = "";
     for ( i = 0; i < $.urlArray.length; i++) {
-        pageControlString += ((i!= page) ? '\u25cb' : '\u25c9');
+        pageControlString += ((i!= page) ? '\u26cb' : '\u26cf');
     }
     $.label.text = pageControlString;    
 }
